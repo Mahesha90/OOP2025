@@ -28,7 +28,7 @@ let vektorid:Vektor[]=[
     new Vektor(1, 5), 
     new Vektor(3, 3), 
     new Vektor(2, 1), 
-];
+];  
 let asukoht=vektorid[0];
 for(let i=1; i<vektorid.length; i++){
     asukoht=asukoht.liida(vektorid[i]);
