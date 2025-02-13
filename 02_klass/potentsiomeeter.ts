@@ -9,7 +9,8 @@ class Potentsiomeeter{
         this.nurk=uusnurk;
     }
     getR():number{
-        return -1; //arvutame pärast
+        return this.rMin+(this.nurk-this.nurkMin)/(this.nurkMax-this.nurkMin)*(this.rMax-this.rMin); 
+        //arvutage potentsiomeetri praeguse hetke takistus
     }
 }
 
@@ -18,3 +19,4 @@ p1.muudaNurk(80);
 console.log(p1);
 p1.muudaNurk(30);
 console.log(p1);
+console.log(p1.getR());
