@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arvutused</title>
+    <script src="arvutused2.js"></script>
+    <script>
+        let c1;
+        let c2;
+
+        // Initialize both converters on page load
+        function startPage(){
+           c1 = new CmToInches(); 
+           c2 = new KmHToMs(); // Assuming KmHToMs is defined in arvutused2.js
+
+           // Set input/output units for CmToInches
+           type1.innerText = c1.inputUnit();
+           type2.innerText = c1.outputUnit();
+
+           // Set input/output units for KmHToMs
+           type3.innerText = c2.inputUnit();
+           type4.innerText = c2.outputUnit();
+        }
+
+        // Convert cm to inches
+        function buttonClickCm() {
+            answer.innerText = c1.calculate(inputCm.valueAsNumber).toFixed(2);
+        }
+
+        // Convert km/h to m/s
+        function buttonClickKmH() {
+            answer_kmh.innerText = c2.calculate(inputKmh.valueAsNumber).toFixed(2);
+        }
+    </script>
+    <meta charset="utf-8" />
+  </head>
+  <body onload="startPage()">
+    <!-- Cm to Inches Conversion -->
+    <div>
+        <input type="number" id="inputCm" onchange="buttonClickCm()"> 
+        <span id="type1"></span>
+        <input type="button" value="=" onclick="buttonClickCm()" />&nbsp;
+        <span id="answer"></span> <span id="type2"></span>
+    </div>
+
+    <br><br>
+
+    <!-- Km/h to m/s Conversion -->
+    <div>
+        <input type="number" id="inputKmh" onchange="buttonClickKmH()"> 
+        <span id="type3"></span>
+        <input type="button" value="=" onclick="buttonClickKmH()" />&nbsp;
+        <span id="answer_kmh"></span> <span id="type4"></span>
+    </div>
+  </body>
+</html>

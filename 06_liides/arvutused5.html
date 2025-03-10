@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arvutused</title>
+    <script src="arvutused4.js"></script> 
+    <script>
+        // Excersice related to Switching implementing classes
+        let calculators = []; // Array to store the different conversion calculators
+        let buttonPressCount = 0; // ✅ Initialize button press counter
+        let lastInput = null; // ✅ Store last input value
+        let lastConversionIndex = null; // ✅ Store last selected conversion type
+
+        function startPage() {
+            calculators[0] = new CmToInches(); 
+            calculators[1] = new InchesToCm();
+            calculators[2] = new KmHToMs(); 
+            calculators[3] = new MsToKmH(); 
+            activateCalculator();
+        }
+
+        function activateCalculator() {
+            type1.innerText = calculators[calculatorSelect.selectedIndex].inputUnit();
+            type2.innerText = calculators[calculatorSelect.selectedIndex].outputUnit();
+            answer.innerText = ""; 
+            input1.value = ""; 
+            lastInput = null; // ✅ Reset last input on new selection
+        }
+
+        function buttonClick() {
+            let currentInput = input1.valueAsNumber;
+            let currentConversionIndex = calculatorSelect.selectedIndex;
+
+            // ✅ Only count if the input or conversion type has changed
+            if (currentInput !== lastInput || currentConversionIndex !== lastConversionIndex) {
+                buttonPressCount++; // Increase count
+                lastInput = currentInput; // Update last input
+                lastConversionIndex = currentConversionIndex; // Update last conversion
+                document.getElementById("buttonCountDisplay").innerText = `Button Presses: ${buttonPressCount}`;
+            }
+
+            // Perform the conversion
+            answer.innerText = calculators[currentConversionIndex].calculate(currentInput).toFixed(2);
+        }
+    </script>
+    <meta charset="utf-8" />
+  </head>
+  <body onload="startPage()">
+  
+      <input type="number" id="input1" onchange="buttonClick()"> <span id="type1"></span>
+      <input type="button" value="=" onclick="buttonClick()" />&nbsp;
+      <span id="answer"></span> <span id="type2"></span><br />
+
+      <select id="calculatorSelect" onchange="activateCalculator()">
+         <option>Centimeters to Inches</option>
+         <option>Inches to Centimeters</option>
+         <option>Kilometers per Hour to Meters per Second</option> 
+         <option>Meters per Second to Kilometers per Hour</option> 
+      </select>
+
+      <p id="buttonCountDisplay">Button Presses: 0</p>
+
+  </body>
+</html>
