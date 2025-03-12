@@ -1,4 +1,4 @@
-// This is a extra example related to first example which allows user to input answwers
+// This is a EXTRA EXAMPLE related to first example which allows user to input answwers
 // Importing the readline module to allow user input from the terminal
 import * as readline from 'readline';
 
@@ -12,17 +12,14 @@ interface Adder {
 // Implementing the interface in a class "SimpleAdder"
 class SimpleAdder implements Adder {
     protected sum: number = 0;  // A protected variable to store the sum
-
     // Method to add a number to the sum
     add(nr: number) {
         this.sum += nr;
     }
-
     // Method to return the current sum
     getSum(): number {
         return this.sum;
     }
-
     // Method to reset the sum to 0
     reset() {
         this.sum = 0;
@@ -31,7 +28,6 @@ class SimpleAdder implements Adder {
 
 // Create an instance of SimpleAdder, but using the Adder interface
 let adder1: Adder = new SimpleAdder();
-
 // Create a readline interface to allow user input from the terminal
 const rl = readline.createInterface({
     input: process.stdin,  // Read from the standard input (keyboard)
