@@ -11,18 +11,18 @@ interface Adder {
      constructor(protected adder: Adder) {}
  
      addWordCharacters(word: string): void {
-         this.adder.add(word.length); // Adds the word length to the adder
+         this.adder.add(word.length); 
      }
  
      getCharacterCount() {
-         return this.adder.getSum(); // Returns the total character count
+         return this.adder.getSum(); 
      }
  }
  
  // CountingAdder class implements Adder interface and adds extra features
  class CountingAdder implements Adder {
-     protected sum: number = 0;  // Sum of all added numbers
-     protected count: number = 0; // Number of added elements
+     protected sum: number = 0;  
+     protected count: number = 0; 
      protected max: number = 0;   // Store the maximum value added
  
      add(nr: number) {
@@ -34,10 +34,9 @@ interface Adder {
      }
  
      getSum(): number {
-         return this.sum;  // Returns the sum of all added numbers
+         return this.sum;  
      }
  
-     // Method to calculate the average of added numbers
      getAverage() {
          if (this.count > 0) {
              return this.sum / this.count;
@@ -58,9 +57,10 @@ interface Adder {
  counter1.addWordCharacters("Juku");
  counter1.addWordCharacters("tuli");
  counter1.addWordCharacters("kooli");
- counter1.addWordCharacters("autoooo");
  
- console.log(counter1.getCharacterCount());  // Outputs the total character count: 14
- console.log(adder1.getAverage());           // Outputs the average: 4.666...
+ console.log(counter1.getCharacterCount());  // Outputs the total character count: 13
+ console.log(adder1.getAverage());           // Outputs the average: 4.333...
  console.log(adder1.getMaxValue());          // Outputs the maximum value added: 5
  
+
+ //note: don’t need a separate let instance for max in the CountingAdder class is because max is already a property of the class and gets updated inside the add() method.

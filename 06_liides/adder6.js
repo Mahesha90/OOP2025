@@ -4,18 +4,18 @@ var CharCounter = /** @class */ (function () {
         this.adder = adder;
     }
     CharCounter.prototype.addWordCharacters = function (word) {
-        this.adder.add(word.length); // Adds the word length to the adder
+        this.adder.add(word.length);
     };
     CharCounter.prototype.getCharacterCount = function () {
-        return this.adder.getSum(); // Returns the total character count
+        return this.adder.getSum();
     };
     return CharCounter;
 }());
 // CountingAdder class implements Adder interface and adds extra features
 var CountingAdder = /** @class */ (function () {
     function CountingAdder() {
-        this.sum = 0; // Sum of all added numbers
-        this.count = 0; // Number of added elements
+        this.sum = 0;
+        this.count = 0;
         this.max = 0; // Store the maximum value added
     }
     CountingAdder.prototype.add = function (nr) {
@@ -26,9 +26,8 @@ var CountingAdder = /** @class */ (function () {
         }
     };
     CountingAdder.prototype.getSum = function () {
-        return this.sum; // Returns the sum of all added numbers
+        return this.sum;
     };
-    // Method to calculate the average of added numbers
     CountingAdder.prototype.getAverage = function () {
         if (this.count > 0) {
             return this.sum / this.count;
@@ -46,8 +45,8 @@ var adder1 = new CountingAdder();
 var counter1 = new CharCounter(adder1);
 counter1.addWordCharacters("Juku");
 counter1.addWordCharacters("tuli");
-counter1.addWordCharacters("kooli");
-counter1.addWordCharacters("autoooo");
-console.log(counter1.getCharacterCount()); // Outputs the total character count: 14
-console.log(adder1.getAverage()); // Outputs the average: 4.666...
+counter1.addWordCharacters("kooli6");
+console.log(counter1.getCharacterCount()); // Outputs the total character count: 13
+console.log(adder1.getAverage()); // Outputs the average: 4.333...
 console.log(adder1.getMaxValue()); // Outputs the maximum value added: 5
+//note: don’t need a separate let instance for max in the CountingAdder class is because max is already a property of the class and gets updated inside the add() method.

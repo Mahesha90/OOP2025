@@ -8,7 +8,6 @@ interface Adder {
  // Class that uses an Adder to count the total number of characters in words
  class CharCounter {
      constructor(protected adder: Adder) { }  // Takes an Adder object as input
- 
      // Adds the number of characters in a given word to the Adder
      addWordCharacters(word: string): void {
          this.adder.add(word.length);  // word.length gives the number of characters

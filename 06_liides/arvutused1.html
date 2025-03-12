@@ -4,21 +4,24 @@
     <title>Arvutused</title>
     <script src="arvutused1.js"></script>
     <script>
-        let c1;
+        let c1; // Declaring a variable that will hold an instance of InchesToCm
         function startPage(){
-           c1=new InchesToCm(); 
-    		   type1.innerText=c1.inputUnit();
-		       type2.innerText=c1.outputUnit();
+           c1=new InchesToCm();  // Creating an instance of the InchesToCm class (which must be defined in arvutused1.js)
+    		   type1.innerText=c1.inputUnit(); // Setting the text inside the element with id="type1" to the input unit (e.g., "in")
+		       type2.innerText=c1.outputUnit(); // Setting the text inside the element with id="type2" to the output unit (e.g., "cm")
         }
 		function buttonClick(){
+     // Retrieving the number from the input field (input1), converting it to cm using the calculate() function,
+           // formatting the result to 2 decimal places, and displaying it inside the element with id="answer".
 		   answer.innerText=c1.calculate(input1.valueAsNumber).toFixed(2);
 		}
     </script>
-	<meta charset="utf-8" />
+	<meta charset="utf-8" /> <!-- Defines character encoding to support special characters -->
   </head>
-  <body onload="startPage()">
-      <input type="number" id="input1" onchange="buttonClick()"> <span id="type1"></span>
-        <input type="button" value="=" onclick="buttonClick()" />&nbsp;
-	  <span id="answer"></span> <span id="type2" ></span>
+  <body onload="startPage()"> <!-- The startPage() function is automatically called when the page loads -->
+      <input type="number" id="input1" onchange="buttonClick()"> <span id="type1"></span> <!-- A number input field (user enters inches). When the value changes, buttonClick() is executed. -->
+        <input type="button" value="=" onclick="buttonClick()" />&nbsp;  <!-- A span element where the input unit ("in") will be displayed -->
+	  <span id="answer"></span> <!-- A span element where the calculated cm value will be displayed -->
+    <span id="type2" ></span> <!-- A span element where the output unit ("cm") will be displayed -->
   </body>
 </html>

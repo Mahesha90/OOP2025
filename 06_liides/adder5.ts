@@ -14,6 +14,7 @@ interface Adder{
      }
  }
  
+ //this is the new implementation
  class CountingAdder implements Adder{
      protected sum:number=0;
      protected count:number=0; //Initialize the count property to -, it will track how many numbers have been added
@@ -33,10 +34,10 @@ interface Adder{
      }
  }
  
- let adder1:CountingAdder=new CountingAdder();
+ let adder1:CountingAdder=new CountingAdder(); //change this to countingadder even in the first part because that is not part of the interface
  let counter1:CharCounter=new CharCounter(adder1);
  counter1.addWordCharacters("Juku");
  counter1.addWordCharacters("tuli");
  counter1.addWordCharacters("kooli");
- console.log(counter1.getCharacterCount()); //outputs the total chracter count=14
- console.log(adder1.getAverage()); //outputs the avaerage length of the words: 4.666
+ console.log(counter1.getCharacterCount()); 
+ console.log(adder1.getAverage()); //outputs the avaerage length of the words: 4.333

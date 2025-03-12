@@ -24,12 +24,10 @@ interface Adder {
  // A simple implementation of Adder that keeps track of a total sum
  class SimpleAdder implements Adder {
      protected sum: number = 0;  // Stores the accumulated total
- 
      // Adds a given number to the sum
      add(nr: number): void {
          this.sum += nr;
      }
- 
      // Returns the current total sum
      getSum(): number {
          return this.sum;
@@ -38,10 +36,8 @@ interface Adder {
  
  // Create an instance of SimpleAdder to handle counting
  let adder1: Adder = new SimpleAdder();
- 
  // Create a CharCounter instance that uses adder1 to track character counts
  let counter1: CharCounter = new CharCounter(adder1);
- 
  // Add words to count their characters
  counter1.addWordCharacters("Juku");   // "Juku" has 4 characters → adds 4
  counter1.addWordCharacters("tuli");   // "tuli" has 4 characters → adds 4

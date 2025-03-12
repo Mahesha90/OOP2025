@@ -5,21 +5,23 @@
     <title>Arvutused</title>
     <script src="arvutused3.js"></script> 
     <script>
-        let calculators=[]; //array to store the different conversion calculators
+        let calculators=[]; // Instead of a single converter (c1), we now use an array to store multiple conversion objects.
         function startPage(){
-           calculators[0]=new CmToInches(); 
-           calculators[1]=new InchesToCm(); 
-		   activateCalculator();
+           calculators[0]=new CmToInches();  // First converter: cm to inches
+           calculators[1]=new InchesToCm(); // Second converter: inches to cm
+		   activateCalculator(); // Calls a function to update the UI based on the selected conversion type.
 		}
+      //new
 		function activateCalculator(){
-		   type1.innerText=calculators[calculatorSelect.selectedIndex].inputUnit();
-		   type2.innerText=calculators[calculatorSelect.selectedIndex].outputUnit();
+		   type1.innerText=calculators[calculatorSelect.selectedIndex].inputUnit(); // Updates the input unit label based on the selected conversion type.
+		   type2.innerText=calculators[calculatorSelect.selectedIndex].outputUnit(); // Updates the output unit label based on the selected conversion type.
 		   answer.innerText=""; //clear the previous answer
            input1.value=''; //clear the input answer
         }
 		function buttonClick(){
 		   answer.innerText=calculators[calculatorSelect.selectedIndex].
 		                          calculate(input1.valueAsNumber).toFixed(2);
+         // Uses the correct converter based on the selected option in the dropdown.
 		}
     </script>
 	<meta charset="utf-8" />
@@ -30,8 +32,9 @@
         <input type="button" value="=" onclick="buttonClick()" />&nbsp;
 	  <span id="answer"></span> <span id="type2" ></span><br />
 	  <select id="calculatorSelect" onchange="activateCalculator()">
-	     <option>centimeters to inches</option>
-	     <option>inches to centimeters</option>
+      <!-- Dropdown menu to allow the user to choose between two conversion types -->
+	     <option>centimeters to inches</option> <!-- Option to convert cm to inches -->
+	     <option>inches to centimeters</option> <!-- Option to convert inches to cm -->
 	  </select>
   </body>
 </html>

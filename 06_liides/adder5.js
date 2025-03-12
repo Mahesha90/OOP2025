@@ -10,6 +10,7 @@ var CharCounter = /** @class */ (function () {
     };
     return CharCounter;
 }());
+//this is the new implementation
 var CountingAdder = /** @class */ (function () {
     function CountingAdder() {
         this.sum = 0;
@@ -31,10 +32,10 @@ var CountingAdder = /** @class */ (function () {
     };
     return CountingAdder;
 }());
-var adder1 = new CountingAdder();
+var adder1 = new CountingAdder(); //change this to countingadder
 var counter1 = new CharCounter(adder1);
 counter1.addWordCharacters("Juku");
 counter1.addWordCharacters("tuli");
 counter1.addWordCharacters("kooli");
-console.log(counter1.getCharacterCount()); //outputs the total chracter count=14
-console.log(adder1.getAverage()); //outputs the avaerage length of the words: 4.666
+console.log(counter1.getCharacterCount());
+console.log(adder1.getAverage()); //outputs the avaerage length of the words: 4.333
