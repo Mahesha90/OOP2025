@@ -1,4 +1,4 @@
-
+//https://taltech-coding.gitlab.io/prog2/testing/17_liidese_realiseerimine.html#
 //first example under interface 17.1
 interface Adder{
     add(nr: number):void; //A method to add a number
