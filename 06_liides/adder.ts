@@ -13,7 +13,9 @@ interface Adder{
      }
  }
  
- //adder 1 declared as Adder type but it actually holds a simple adder obkect
+//adder 1 declared as Adder type but it actually holds a simple adder object
+//let adder1: Adder means you're declaring a variable called adder1 that follows the Adder interface.
+//new SimpleAdder() creates a new instance of the SimpleAdder class (the object that actually does the work of adding numbers).
  let adder1:Adder=new SimpleAdder(); 
  adder1.add(3); //adds 3 to the sum
  adder1.add(5); //adds 5 to the sum
