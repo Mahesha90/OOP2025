@@ -61,3 +61,5 @@ interface Adder{
 
  //array is a data structure that allows you to store multiple values under a single variable name.
  //Array: [10, 20, 30, 40, 50]
+ //Think of an array as a row of boxes where each box can hold something, like a number or a word.
+//Each box has a number label (called an index) that helps us find what's inside. The labels start from 0 (not 1) and go up, like a numbered list.
