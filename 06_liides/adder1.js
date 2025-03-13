@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// This is a EXTRA EXAMPLE related to first example which allows user to input answwers
 // Importing the readline module to allow user input from the terminal
 var readline = require("readline");
 // Implementing the interface in a class "SimpleAdder"

@@ -1,5 +1,6 @@
 //Using the interface 
 
+
 // Define an interface Adder that specifies two methods: add and getSum.
 interface Adder {
     add(nr: number): void;  // A method to add a number
@@ -45,3 +46,8 @@ interface Adder {
  
  // Output the total character count (should be 4 + 4 + 5 = 13)
  console.log(counter1.getCharacterCount()); // Output: 13
+
+
+
+ //The constructor in CharCounter ensures that the class can work with any object that follows the Adder interface. 
+ // It gives the CharCounter class flexibility by allowing it to delegate the task of adding numbers and calculating the sum to the Adder object. 

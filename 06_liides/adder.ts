@@ -6,7 +6,7 @@ interface Adder{
  }
  
  class SimpleAdder implements Adder{
-     protected sum:number=0; //Intial sum is -
+     protected sum:number=0; //Intial sum is 0. Without initial value sum would be undefined
      add(nr:number){this.sum+=nr;} //add the given number to sum
      getSum(): number { //retun the current sum
          return this.sum;
@@ -20,3 +20,5 @@ interface Adder{
  adder1.add(3); //adds 3 to the sum
  adder1.add(5); //adds 5 to the sum
  console.log(adder1.getSum()); //prints 8 because sum =8
+
+ //This code defines an interface Adder, then creates a class SimpleAdder that implements it. Finally an instance of SimpleAdder is used to add numbers and print the total sum.

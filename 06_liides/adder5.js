@@ -1,3 +1,6 @@
+// More versatile implementation
+//In the example, in addition to the subtotal, the number of added elements is also remembered. 
+// This way, if desired, it is possible to find the average value of the added elements later.
 var CharCounter = /** @class */ (function () {
     function CharCounter(adder) {
         this.adder = adder;
@@ -32,7 +35,7 @@ var CountingAdder = /** @class */ (function () {
     };
     return CountingAdder;
 }());
-var adder1 = new CountingAdder(); //change this to countingadder
+var adder1 = new CountingAdder(); //change this to countingadder even in the first part because that is not part of the interface
 var counter1 = new CharCounter(adder1);
 counter1.addWordCharacters("Juku");
 counter1.addWordCharacters("tuli");

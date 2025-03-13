@@ -3,18 +3,19 @@
 var CharCounter = /** @class */ (function () {
     function CharCounter(adder) {
         this.adder = adder;
-    } //Instead of directly updating sum, it stores each added number in an array
+    }
     CharCounter.prototype.addWordCharacters = function (word) {
-        this.adder.add(word.length); // Store the length of the word
+        this.adder.add(word.length);
     };
     CharCounter.prototype.getCharacterCount = function () {
-        return this.adder.getSum(); // Get the total character count
+        return this.adder.getSum();
     };
     return CharCounter;
 }());
+//first time for storing adder instead of counting adder in the previous example
 var StoringAdder = /** @class */ (function () {
     function StoringAdder() {
-        this.store = [];
+        this.store = []; // Instead of maintaining a single sum, we store each number in an array.
     }
     StoringAdder.prototype.add = function (nr) {
         this.store.push(nr); //Instead of updating a running total, numbers are stored individually.
@@ -24,8 +25,8 @@ var StoringAdder = /** @class */ (function () {
         for (var _i = 0, _a = this.store; _i < _a.length; _i++) {
             var amount = _a[_i];
             sum += amount;
-        } //Since numbers are stored individually, we need to compute the sum dynamically.This allows us to track each number separately.
-        return sum;
+        } // Iterate through all stored numbers and add them to compute the total sum.
+        return sum; // there is no this.sum property in the class so we dont say this.sum
     };
     StoringAdder.prototype.getAverage = function () {
         if (this.store.length > 0) {
@@ -54,11 +55,11 @@ var StoringAdder = /** @class */ (function () {
     };
     return StoringAdder;
 }());
-var adder1 = new StoringAdder();
+var adder1 = new StoringAdder(); //change this to stroingadder
 var counter1 = new CharCounter(adder1);
 counter1.addWordCharacters("Juku");
 counter1.addWordCharacters("tuli");
 counter1.addWordCharacters("kooli");
 console.log(counter1.getCharacterCount());
 console.log(adder1.getAverage());
-console.log(adder1.getRange());
+console.log(adder1.getRange()); //this is new to get the range

@@ -1,4 +1,7 @@
 // More versatile implementation
+//In the example, in addition to the subtotal, the number of added elements is also remembered. 
+// This way, if desired, it is possible to find the average value of the added elements later.
+
 interface Adder{
     add(nr: number):void;
     getSum():number;
