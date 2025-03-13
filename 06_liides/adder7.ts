@@ -57,3 +57,7 @@ interface Adder{
  console.log(counter1.getCharacterCount());
  console.log(adder1.getAverage());
  console.log(adder1.getRange()); //this is new to get the range
+
+
+ //array is a data structure that allows you to store multiple values under a single variable name.
+ //Array: [10, 20, 30, 40, 50]
